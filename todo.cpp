@@ -91,5 +91,18 @@ class Todolist{
             cout << "Invalid task number!" << endl;
         }
     }
+    //Display all tasks in the list.
 
+    void displaytasks(){
+        if(tasks.empty())
+        cout<<"No tasks to be deleted."<<endl;
+        else{
+            cout << "Tasks:" << endl;
+            for (int i = 0; i < tasks.size(); ++i) {
+                cout << i + 1 << ". ";
+                tasks[i].displayTask();
+            }
+        }
+    }
+    
 };
