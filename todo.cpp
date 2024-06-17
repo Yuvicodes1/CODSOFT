@@ -39,3 +39,6 @@ using namespace std;
 };
 
 //Now a TO-DO list class
+class Todolist{
+    
+};
