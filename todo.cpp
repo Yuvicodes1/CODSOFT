@@ -15,11 +15,20 @@ using namespace std;
     //Constructor for initializing task
     Task(const string& name, const string& description,
          const string& due_date)
-        : name(name)
-        , description(description)
-        , due_date(due_date)
-        , status(false)
-        { 
+        : name(name), 
+        description(description),
+        due_date(due_date),
+        status(false){}
+
+        void setDescription(const string &description){
+            this->description=description;
         }
-    
-}
+        void setDueDate(const string& due_date)
+        {
+            this->due_date = due_date;
+        }
+
+        // Mark the task as completed
+        void markCompleted() { status = true; }
+        
+};
