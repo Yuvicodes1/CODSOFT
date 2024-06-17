@@ -31,4 +31,11 @@ using namespace std;
         // Mark the task as completed
         void markCompleted() { status = true; }
         
+        // Display task details
+        void displayTask() const
+        {
+            cout << name << "("<< (status ? "Completed" : "Pending")<< ") - Due: " << due_date <<"\n"<< "   Description: " << description << endl;
+        }
 };
+
+//Now a TO-DO list class
