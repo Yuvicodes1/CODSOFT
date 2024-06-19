@@ -104,5 +104,28 @@ class Todolist{
             }
         }
     }
-    
+
+    //marking a task as completed
+
+    void markcompleted(){
+        if(tasks.empty())
+        cout<<"No tasks.";
+        else{
+            for (int i = 0; i < tasks.size(); ++i) {
+            cout << i + 1 << ". " << tasks[i].name<< endl;
+            }
+        unsigned int tno;
+        cout<<"Enter task number which has been completed. :"<<endl;
+        cin>>tno;
+        if (tno <= tasks.size()) {
+            tasks[tno - 1].markCompleted();
+            cout << "Task marked as completed!" << endl;
+            }
+        else
+            cout<<"Invalid Task number\n";    
+        }
+    }
+
+    //edit a task.
+
 };
