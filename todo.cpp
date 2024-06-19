@@ -34,7 +34,7 @@ using namespace std;
         
         //set name
         void setName(const string& name) { this->name = name; }
-        
+
         // Display task details
         void displayTask() const
         {
@@ -165,3 +165,41 @@ class Todolist{
     }
 
 };
+
+//main function
+
+int main()
+{
+    Todolist todo;
+    int ch=-1;
+    while(ch!=6){
+        todo.displaymenu();
+        cout<<"Enter your choice : ";
+        cin>>ch;
+        switch (ch) {
+            case 1:
+                todo.addtask();
+                break;
+            case 2:
+                todo.deletetask();
+                break;
+            case 3:
+                todo.displaytasks();
+                break;
+            case 4:
+                todo.markcompleted();
+                break;
+            case 5:
+                todo.editTask();
+                break;
+            case 6:
+                cout << "Exiting program. Bye!" << endl;
+                break;
+            default:
+                cout << "Invalid choice. Please try again!"
+                     << endl;
+        }
+    }
+return 0;
+}    
+
