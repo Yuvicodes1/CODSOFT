@@ -32,6 +32,9 @@ using namespace std;
         // Mark the task as completed
         void markCompleted() { status = true; }
         
+        //set name
+        void setName(const string& name) { this->name = name; }
+        
         // Display task details
         void displayTask() const
         {
@@ -127,5 +130,38 @@ class Todolist{
     }
 
     //edit a task.
+
+    void editTask(){
+        if (tasks.empty()) {
+            cout << "No tasks to edit!" << endl;
+            return;
+        }
+        cout << "Tasks:" << endl;
+        for (int i = 0; i < tasks.size(); ++i) {
+            cout << i + 1 << ". " << tasks[i].name<< endl;
+        }
+        cout << "Enter the task number to edit: ";
+        int taskNumber;
+        cin >> taskNumber;
+        if (taskNumber >= 1 && taskNumber <= tasks.size()) {
+            Task& task = tasks[taskNumber - 1];
+            string name, description, due_date;
+            cout << "Enter new task name (current: "<< task.name << "): ";
+            cin.ignore();
+            getline(cin, name);
+            cout << "Enter new task description (current: "<< task.description << "): ";
+            getline(cin, description);
+            cout << "Enter new task due date (current: "<< task.due_date << "): ";
+            getline(cin, due_date);
+
+            task.setName(name);
+            task.setDescription(description);
+            task.setDueDate(due_date);
+            cout << "Task updated successfully!" << endl;
+        }
+        else {
+            cout << "Invalid task number!" << endl;
+        }
+    }
 
 };
