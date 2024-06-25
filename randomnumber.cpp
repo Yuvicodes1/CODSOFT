@@ -7,15 +7,14 @@
 
 using namespace std;
 
-class GuessNo {
-    public:
-    srand(time(NULL));
+int main(){
+    srand(time(0));
     int number ;
     number= rand()%1000+1;
     int guess;
     do {
         cout<<"Enter your estimate : ";
-        cin<<guess;
+        cin>>guess;
         int diff=abs(number-guess);
         if (guess>number){
             if(diff>50){
@@ -34,10 +33,8 @@ class GuessNo {
         else if (guess==number)
         {
             cout<<"YAY ! Correct number guessed";
-            return ;
         }        
-    } while(guess!=number);    
-};
-
-
+    } while(guess!=number); 
+    return 0;   
+}
 
